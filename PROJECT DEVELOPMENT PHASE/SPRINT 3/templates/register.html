@@ -1,0 +1,31 @@
+{% extends "base.html" %} 
+{% block content %}
+
+<div align="center">
+	<div align="center" class="border">
+	  <div class="header"></div>
+	   {% if msg %}
+	   <div class="alert alert-info alert-dismissible fade show" role="alert">
+		  <h1 class="alert-msg">{{ msg }}</h1>
+		  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+			<span aria-hidden="true">&times;</span>
+		  </button>
+		</div>
+	  {% endif %}
+	  <div class="login-content">
+					<h1><strong>Sign Up</strong></h1><br><br>
+				<form action="{{ url_for('register') }}" method="post">
+					<label>Username: </label>
+					<input id="name" name="name" type="text" placeholder="Enter Your Username" class="textbox"/></br></br>
+					<label>Password: </label>
+					<input id="password" name="password" type="password" placeholder="Enter Your Password" class="textbox"/></br></br>
+					<label>Email ID: </label>
+					<input id="email" name="email" type="text" placeholder="Enter Your Email ID" class="textbox"/></br></br><br>
+					<input type="submit" class="btn" value="Sign Up"></br>
+				</form><br><br>
+			</h2>
+			<p class="signup-msg">Already have an account? <a class="bottom" href="{{url_for('login')}}"> Log In here</a></p><br><br>
+		</div>
+		</div>
+{% endblock %}
+        
