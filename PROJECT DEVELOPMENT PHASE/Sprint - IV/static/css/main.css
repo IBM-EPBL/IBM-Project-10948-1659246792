@@ -1,0 +1,76 @@
+body{
+    background-image:url("flights.jpeg");
+    background-repeat:no-repeat ;
+    background-size: cover;
+    background-position: center;
+}
+
+h1{
+    color:white;
+    font-size: 70px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+p{
+    color:white;
+    font-size: 25px;
+    
+}
+
+#form{
+    border:5px outset white ;
+    border-bottom: 3px solid white;
+    width:fit-content;
+    background-image:url("flights.jpeg");
+    background-repeat:no-repeat ;
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 30px;
+    padding: 20px;
+}
+
+label{
+    color:white
+}
+
+.time{
+    margin: 10px;
+}
+
+.time2{
+    margin-bottom: 4px;
+}
+
+.form-control-inline{
+    min-width: 0;
+    width: auto;
+    display: inline;
+}
+
+.input-feilds{
+    margin-top: 30px;
+    padding:6px
+}
+
+label{
+    font-size: 20px;
+    
+}
+
+.result{
+    margin-top: 250px;
+}
+
+.result-text{
+    font-size: 100px;
+    color:rgb(255, 255, 255)
+}
+
+.flight-time{
+    
+    color:white;
+    font-size: 50px;
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
