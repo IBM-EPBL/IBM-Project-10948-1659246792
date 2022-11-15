@@ -1,0 +1,31 @@
+{% extends "base.html" %} 
+{% block content %}
+        <h1>Flight delay prediction</h1>
+        <h1>Using decision tree</h1>
+
+        <form method="POST" action="/predict">
+            <p>CRS_DEP_TIME</p>
+            <input name="crsdt" required>
+            <p>DEP_TIME</p>   
+            <input name="deptime" required>           
+            <p>DEP_DELAY</p> 
+            <input name="depdelay" required>             
+            <p>CRS_ARR_TIME</p> 
+            <input name="crsat" required>
+            <p>ARR_TIME</p> 
+            <input name="at" required>         
+            <p>ARR_DELAY</p> 
+            <input name="ad" required>       
+            <p>DEP_DEL15</p>
+            <input name="depdel" required>              
+            <p>CANCELLED</p>   
+            <input name="cancel" required>            
+            <p>DIVERTED</p>     
+            <input name="divert" required>           
+            <p>CRS_ELAPSED_TIME</p> 
+            <input name="crset" required>      
+            <p>ACTUAL_ELAPSED_TIME</p>  
+            <input name="aet" required>
+            <button type="submit">SUBMIT</button>
+        </form>
+{% endblock %}

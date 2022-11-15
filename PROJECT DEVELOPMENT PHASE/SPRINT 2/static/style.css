@@ -1,0 +1,13 @@
+li {
+    list-style-type: none;
+    margin: 20px;
+}
+
+body {
+    font-size: 10px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.nav-header {
+    align-content: center;
+}
