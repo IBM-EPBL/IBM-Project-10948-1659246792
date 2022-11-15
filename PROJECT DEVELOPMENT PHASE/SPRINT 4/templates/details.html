@@ -1,0 +1,60 @@
+{% extends "base.html" %} 
+{% block content %}
+<div align="center">
+    <div align="center" class="border">
+       {% if msg %}
+       <div class="alert alert-info alert-dismissible fade show" role="alert">
+          <strong>Hi, {{ msg }}</strong>
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      {% endif %}
+         <div class="home-content">
+            <h1><strong>Flight details</strong></h1><br><br>
+        <form method="POST" action="/predict">
+            <label>Departure Date</label>
+            <input name="dep_date" type="date" placeholder="Enter Departure Date" class="textbox" required/></br><br>
+
+            <label>CRS Departure Time</label>
+            <input name="crs_dep_time" type="time" placeholder="Enter CRS Departure time" class="textbox" required/></br><br>
+
+            <label>CRS Arrival Time</label>
+            <input name="crs_arr_time" type="time" placeholder="Enter CRS Arrival time" class="textbox" required/></br><br>
+
+            <label>Actual Departure Time</label>
+            <input name="dep_time" type="time" placeholder="Enter Actual Departure time" class="textbox" required/></br><br>
+
+            <label>Has the flight been cancelled?</label>
+            <input name="cancelled" type="radio" id="canceltrue" />
+            <label for="canceltrue">Yes</label>
+            <input name="cancelled" type="radio" id="cancelfalse" />
+            <label for="cancelfalse">No</label><br><br>
+
+            <label>Has the flight been diverted?</label>
+            <input name="diverted" type="radio" id="diverttrue" />
+            <label for="diverttrue">Yes</label>
+            <input name="diverted" type="radio" id="divertfalse" />
+            <label for="divertfalse">No</label><br><br>
+
+            <input name="submit" type="submit" value="Submit">
+        </form>
+        {% if predict == 0 %}
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <h1 class="alert-msg">Arrival is <strong>NOT DELAYED</strong> by more than 15 minutes!</h1>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        {% endif %}
+        {% if predict == 1 %}
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <h1 class="alert-msg">Arrival is <strong>DELAYED</strong> by more than 15 minutes!</h1>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        {% endif %}
+
+
+{% endblock %}

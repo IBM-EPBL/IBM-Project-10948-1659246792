@@ -1,0 +1,50 @@
+{% extends "base.html" %} 
+{% block content %}
+<div align="center">
+  <div align="center" class="border">
+    <div class="header"></div>
+     {% if msg %}
+     <div class="alert alert-info alert-dismissible fade show" role="alert">
+        <h1 class="alert-msg">{{ msg }}</h1>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+    {% endif %}
+    <div class="login-content">
+        <h1><strong>Login</strong></h1><br><br>
+        <form action="{{ url_for('login') }}" method="post">
+            <label>Username: </label>
+            <input id="name" name="name" type="text" placeholder="Enter Your Username" class="textbox"/></br></br>
+            <label>Password:  </label>
+            <input id="password" name="password" type="password" placeholder="Enter Your Password" class="textbox"/></br></br></br>
+            <input type="submit" class="btn" value="Log In"></br>
+        </form><br><br>
+        <p class="signup-msg">Don't have an account?  <a class="bottom" href="{{url_for('register')}}"> Sign Up here</a></p>
+    </div>
+  </div>
+</div>
+        <!-- <div align="center">
+          <div align="center" class="border">
+             <div class="header">
+                <h1 class="word">Login</h1>
+             </div>
+             {% if msg %}
+             <div class="alert alert-info alert-dismissible fade show" role="alert">
+                <strong>{{ msg }}</strong>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+            {% endif %}
+            <h2 class="word">
+                <form action="{{ url_for('login') }}" method="post">
+                    <input id="name" name="name" type="text" placeholder="Enter Your Username" class="textbox"/></br></br>
+                    <input id="password" name="password" type="password" placeholder="Enter Your Password" class="textbox"/></br></br></br>
+                    <input type="submit" class="btn" value="Sign In"></br></br>
+                </form>
+            </h2>
+            <p>Don't have an account?  <a class="bottom" href="{{url_for('register')}}"> Sign Up here</a></p>
+          </div>
+        </div> -->
+{% endblock %}
